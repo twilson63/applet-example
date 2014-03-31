@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<title>Container</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/bootstrap.css">
+<div ng-app="app">
+  <div class="container" ng-controller="AppCtrl">
+    <!-- setup my directive here -->
+    <applet></applet>
+  </div>
+</div>
+<script src="js/pouchdb-nightly.js"></script>
+<script src="js/angular.js"></script>
+<script src="bundle.js"></script>
+<script>
+angular.module('app', ['applet'])
+  .controller('AppCtrl', function($scope) {
+
+  });
+</script>

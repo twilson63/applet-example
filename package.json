@@ -1,0 +1,21 @@
+{
+  "name": "applet-example",
+  "version": "0.0.0",
+  "devDependencies": {
+    "tap": "^0.4.8",
+    "less": "^1.7.0",
+    "browserify": "^3.38.0",
+    "brfs": "^1.0.0",
+    "watchify": "^0.6.3"
+  },
+  "scripts": {
+    "build": "browserify -t brfs app/app.js -o public/bundle.js",
+    "start": "w3 --directory public --pushstate",
+    "less": "lessc node_modules/bootstrap/less/bootstrap.less > public/css/bootstrap.css",
+    "pouchdb": "cp node_modules/pouchdb/dist/pouchdb-nightly.js public/js/pouchdb-nightly.js",
+    "angular": "cp node_modules/angular/angular.js public/js/angular.js",
+    "fonts": "cp -R node_modules/bootstrap/dist/fonts public/.",
+    "watch": "watchify -t brfs app/app.js -o public/bundle.js",
+    "test": "tap test/**/*.js"
+  }
+}
